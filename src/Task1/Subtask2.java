@@ -14,10 +14,10 @@ public class Subtask2 implements ITask {
 
     public void execute() {
         int n = 0;
-        List<Integer> nums = new ArrayList<>();
+        List<Integer> numbers = new ArrayList<>();
         do {
             int num = scanner.nextInt();
-            nums.add(num);
+            numbers.add(num);
             n++;
         } while (scanner.hasNextInt());
 
@@ -26,7 +26,7 @@ public class Subtask2 implements ITask {
         int min_number = 0;
         int max_number = 0;
         while (i < n) {
-            int current_number = nums.get(i);
+            int current_number = numbers.get(i);
             System.out.print(current_number + " ");
 
             if (i == 0) {
