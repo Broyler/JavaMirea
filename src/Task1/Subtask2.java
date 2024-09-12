@@ -14,7 +14,7 @@ public class Subtask2 implements ITask {
 
     public void execute() {
         int n = 0;
-        List<Integer> nums = new ArrayList<Integer>();
+        List<Integer> nums = new ArrayList<>();
         do {
             int num = scanner.nextInt();
             nums.add(num);
