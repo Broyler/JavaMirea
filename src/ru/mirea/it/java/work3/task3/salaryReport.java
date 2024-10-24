@@ -11,7 +11,7 @@ public class salaryReport {
         }
     }
 
-    private class Report {
+    private static class Report {
         public static void generateReport(Employee[] employees) {
             for (Employee employee : employees) {
                 System.out.printf("%-20s$%,10.2f", employee.fullName,

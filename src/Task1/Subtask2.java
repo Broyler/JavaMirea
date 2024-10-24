@@ -15,34 +15,20 @@ public class Subtask2 implements ITask {
     public void execute() {
         int n = 0;
         List<Integer> numbers = new ArrayList<>();
+
+        int min_number = -9999;
+        int max_number = 9999;
+
         do {
             int num = scanner.nextInt();
             numbers.add(num);
+            min_number = num < min_number ? num : min_number;
+            max_number = num > max_number ? num : max_number;
             n++;
         } while (scanner.hasNextInt());
 
         System.out.print("Получился массив: ");
         int i = 0;
-        int min_number = 0;
-        int max_number = 0;
-        while (i < n) {
-            int current_number = numbers.get(i);
-            System.out.print(current_number + " ");
-
-            if (i == 0) {
-                min_number = current_number;
-                max_number = current_number;
-            }
-
-            if (current_number < min_number)
-                min_number = current_number;
-
-            if (current_number > max_number)
-                max_number = current_number;
-
-            i++;
-        }
-
         System.out.println();
         System.out.println("Минимальный элемент: " + min_number);
         System.out.println("Максимальный элемент: " + max_number);
