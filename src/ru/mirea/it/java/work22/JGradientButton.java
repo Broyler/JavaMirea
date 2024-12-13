@@ -5,18 +5,17 @@ import org.w3c.dom.events.EventListener;
 
 import javax.swing.*;
 import java.awt.*;
-import java.awt.event.ActionEvent;
-import java.awt.event.ActionListener;
-import java.awt.event.MouseEvent;
-import java.awt.event.MouseListener;
+import java.awt.event.*;
 
 public class JGradientButton extends JButton implements MouseListener {
     private final Color[] colors;
     private final float[] positions;
     private boolean isPressed = false;
+    private String label;
 
     public JGradientButton(String label, Color[] colors, float[] positions) {
         super(label);
+        this.label = label;
         this.colors = colors;
         this.positions = positions;
         setContentAreaFilled(false);

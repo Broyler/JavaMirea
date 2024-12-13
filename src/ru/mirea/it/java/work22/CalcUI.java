@@ -4,8 +4,10 @@ import javax.swing.*;
 import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.awt.event.KeyEvent;
+import java.awt.event.KeyListener;
 
-public class CalcUI extends JFrame implements ActionListener {
+public class CalcUI extends JFrame implements ActionListener, KeyListener {
     String currentNumber = "";
     String builtExpression = "";
     JTextField input;
@@ -46,6 +48,24 @@ public class CalcUI extends JFrame implements ActionListener {
         add(buttons, BorderLayout.SOUTH);
     }
 
+
+    public void keyPressed(KeyEvent arg0) {
+        char c = arg0.getKeyChar();
+        System.out.println(c);
+        applyInput(Character.toString(c).toLowerCase());
+    }
+
+    public void keyReleased(KeyEvent arg0) {
+        char c = arg0.getKeyChar();
+        System.out.println("Released " + c);
+    }
+
+    public void keyTyped(KeyEvent arg0) {
+        char c = arg0.getKeyChar();
+        System.out.println("Typed " + c);
+    }
+
+
     private void finishNumber() {
         if (currentNumber.equals("")) { return; }
         int t = Integer.parseInt(currentNumber);
@@ -54,8 +74,7 @@ public class CalcUI extends JFrame implements ActionListener {
         calc.addNum(t);
     }
 
-    public void actionPerformed(ActionEvent e) {
-        String t = e.getActionCommand();
+    private void applyInput(String t) {
         if ("0123456789".contains(t)) {
             if (currentNumber.startsWith("0")) {
                 currentNumber = t;
@@ -89,7 +108,12 @@ public class CalcUI extends JFrame implements ActionListener {
             currentNumber = "";
             builtExpression = "";
         }
+    }
 
+    public void actionPerformed(ActionEvent e) {
+        String t = e.getActionCommand();
+
+        applyInput(t);
     }
 
     public static void main(String[] args) {

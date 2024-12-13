@@ -9,6 +9,7 @@ public class Task2 {
         System.out.println("Введите дату в формате dd.MM.yyyy-HH:mm:ss");
         String input = scanner.nextLine();
         SimpleDateFormat sdf = new SimpleDateFormat("dd.MM.yyyy-HH:mm:ss");
+        sdf.setLenient(false);
 
         try {
             Date d = new Date();

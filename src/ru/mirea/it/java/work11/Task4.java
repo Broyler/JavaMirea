@@ -7,6 +7,8 @@ public class Task4 {
    public static void main(String[] args) {
        SimpleDateFormat fmtDate = new SimpleDateFormat("<dd><MM><yyyy>");
        SimpleDateFormat fmtTime = new SimpleDateFormat("<HH><mm>");
+       fmtDate.setLenient(false);
+       fmtTime.setLenient(false);
 
        Scanner scanner = new Scanner(System.in);
        String date = scanner.nextLine();
